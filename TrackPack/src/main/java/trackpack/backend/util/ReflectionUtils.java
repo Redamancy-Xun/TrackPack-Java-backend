@@ -1,10 +1,10 @@
-package fun.redamancyxun.eqmaster.backend.util;
+package trackpack.backend.util;
 
 import java.lang.reflect.Field;
 
 /**
  * Created with IntelliJ IDEA.
- * User: zhangrui1
+ * user: zhangrui1
  * Date: 14-4-29
  * Time: 上午11:34
  * Description: 反射工具类

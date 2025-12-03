@@ -1,7 +1,8 @@
-package fun.redamancyxun.eqmaster.backend.exception;
+package trackpack.backend.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @AllArgsConstructor
@@ -22,6 +23,19 @@ public enum EnumExceptionType {
     INTERRUPTED_ERROR(1010, "线程中断异常"),
     PROCESS_ERROR(1011, "进程错误"),
     PROCESS_TIME_OUT(1012, "进程超时"),
+
+    // TrackPack项目自定义错误 1（2 开头）
+    BACKPACK_NOT_EXIST(2001,"背包不存在"),
+    BACKPACK_IS_DISABLED(2002,"背包已被停用"),
+    BACKPACK_IS_BIND(2003,"背包已被绑定"),
+    DELETE_FAILED(2004,"删除失败"),
+    INVALID_ATTRIBUTE(2005,"无效属性，请输入【backpack_name: 背包名称, module_battery: 模块电量, location: 位置, network_status: 网络状态】"),
+    RFID_TAG_NOT_EXIST(2006,"RFID标签不存在"),
+    RFID_TAG_IS_DISABLED(2007,"RFID标签已被停用"),
+    RFID_TAG_IS_BIND(2008,"RFID标签已被绑定"),
+    RFID_TAG_ACTION_NOT_EXIST(2009,"RFID标签行为不存在"),
+    RFID_TAG_ACTION_IS_DISABLED(2010,"RFID标签行为已被删除"),
+    USERNAME_NOT_EXIST(2011,"用户不存在, 请检查用户名是否正确"),
 
     // 项目自定义错误 2（3 开头）
     ARTICLE_NOT_EXIST(3001,"帖子不存在"),

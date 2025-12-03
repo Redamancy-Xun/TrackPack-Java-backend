@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package trackpack.backend.demos.web;
+package trackpack.backend.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;

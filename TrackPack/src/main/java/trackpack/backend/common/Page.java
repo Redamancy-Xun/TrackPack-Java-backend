@@ -1,4 +1,4 @@
-package fun.redamancyxun.eqmaster.backend.common;
+package trackpack.backend.common;
 
 import com.github.pagehelper.PageInfo;
 import lombok.AllArgsConstructor;
@@ -18,7 +18,7 @@ public class Page<T> {
     private Integer pageNum = 1;
     //每页显示总条数
     @Builder.Default
-    private Integer pageSize = 10;
+    private Integer pageSize = 5;
     //总条数
     private Long total;
     //总页数

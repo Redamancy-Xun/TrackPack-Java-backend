@@ -1,4 +1,4 @@
-package fun.redamancyxun.eqmaster.backend.config;//package fun.redamancyxun.chinese.backend.config;
+package trackpack.backend.config;//package fun.redamancyxun.chinese.backend.config;
 //
 //import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.Configuration;

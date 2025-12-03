@@ -1,4 +1,4 @@
-package fun.redamancyxun.eqmaster.backend.config;
+package trackpack.backend.config;
 
 
 import com.alibaba.fastjson.support.spring.GenericFastJsonRedisSerializer;

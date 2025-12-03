@@ -1,4 +1,4 @@
-package fun.redamancyxun.eqmaster.backend.exception;
+package trackpack.backend.exception;
 
 import lombok.Getter;
 

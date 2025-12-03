@@ -1,4 +1,4 @@
-package fun.redamancyxun.eqmaster.backend.util;
+package trackpack.backend.util;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.client.config.RequestConfig;

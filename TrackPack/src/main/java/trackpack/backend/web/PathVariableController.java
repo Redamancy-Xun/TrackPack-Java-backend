@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package trackpack.backend.demos.web;
+package trackpack.backend.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,7 +32,7 @@ public class PathVariableController {
     @RequestMapping(value = "/user/{userId}/roles/{roleId}", method = RequestMethod.GET)
     @ResponseBody
     public String getLogin(@PathVariable("userId") String userId, @PathVariable("roleId") String roleId) {
-        return "User Id : " + userId + " Role Id : " + roleId;
+        return "user Id : " + userId + " Role Id : " + roleId;
     }
 
     // http://127.0.0.1:8080/javabeat/somewords

@@ -1,11 +1,11 @@
-package fun.redamancyxun.eqmaster.backend.util;
+package trackpack.backend.util;
 
-import fun.redamancyxun.eqmaster.backend.common.CommonConstants;
-import fun.redamancyxun.eqmaster.backend.dto.SessionData;
-import fun.redamancyxun.eqmaster.backend.entity.User;
-import fun.redamancyxun.eqmaster.backend.exception.EnumExceptionType;
-import fun.redamancyxun.eqmaster.backend.exception.MyException;
-import fun.redamancyxun.eqmaster.backend.mapper.UserMapper;
+import trackpack.backend.common.CommonConstants;
+import trackpack.backend.dto.SessionData;
+import trackpack.backend.entity.User;
+import trackpack.backend.exception.EnumExceptionType;
+import trackpack.backend.exception.MyException;
+import trackpack.backend.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -62,19 +62,19 @@ public class SessionUtils {
         if (Objects.equals(key, "shadow")) {
             SessionData sessionData = new SessionData();
             sessionData.setId("shadow");
-            sessionData.setRole(2);
+//            sessionData.setRole(2);
             return sessionData;
         }
         if (Objects.equals(key, "admin")) {
             SessionData sessionData = new SessionData();
             sessionData.setId("admin");
-            sessionData.setRole(1);
+//            sessionData.setRole(1);
             return sessionData;
         }
         if (Objects.equals(key, "superAdmin")) {
             SessionData sessionData = new SessionData();
             sessionData.setId("superAdmin");
-            sessionData.setRole(0);
+//            sessionData.setRole(0);
             return sessionData;
         }
 

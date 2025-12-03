@@ -1,4 +1,4 @@
-package fun.redamancyxun.eqmaster.backend.util;
+package trackpack.backend.util;
 
 import java.sql.Timestamp;
 import java.util.*;

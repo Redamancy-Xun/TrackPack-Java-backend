@@ -1,4 +1,4 @@
-package fun.redamancyxun.eqmaster.backend.common;
+package trackpack.backend.common;
 
 public class CommonConstants {
 

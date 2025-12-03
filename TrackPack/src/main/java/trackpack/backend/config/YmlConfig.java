@@ -1,4 +1,4 @@
-package fun.redamancyxun.eqmaster.backend.config;
+package trackpack.backend.config;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;

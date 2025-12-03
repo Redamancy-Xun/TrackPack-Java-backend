@@ -1,6 +1,6 @@
-package fun.redamancyxun.eqmaster.backend.common;
+package trackpack.backend.common;
 
-import fun.redamancyxun.eqmaster.backend.exception.EnumExceptionType;
+import trackpack.backend.exception.EnumExceptionType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

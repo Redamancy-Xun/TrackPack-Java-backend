@@ -1,7 +1,9 @@
-package trackpack.backend.mapper;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-import trackpack.backend.entity.Record;
-
-public interface RecordRepository extends JpaRepository<Record, Integer> {
-}
+//package trackpack.backend.mapper;
+//
+//import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+//import org.apache.ibatis.annotations.Mapper;
+//import trackpack.backend.entity.Record;
+//
+//@Mapper
+//public interface RecordMapper extends BaseMapper<Record> {
+//}

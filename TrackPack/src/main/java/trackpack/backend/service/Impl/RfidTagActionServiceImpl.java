@@ -1,8 +1,11 @@
 package trackpack.backend.service.Impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import trackpack.backend.common.Page;
 import trackpack.backend.entity.RfidTag;
 import trackpack.backend.entity.RfidTagAction;
 import trackpack.backend.exception.EnumExceptionType;
@@ -16,7 +19,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
-public class RfidTagActionImpl implements RfidTagActionService {
+public class RfidTagActionServiceImpl implements RfidTagActionService {
 
     @Autowired
     private SessionUtils sessionUtils;
@@ -31,7 +34,7 @@ public class RfidTagActionImpl implements RfidTagActionService {
      * 插入 RFID 标签动作
      * @param rfidTagId RFID 标签 ID
      * @param actionUserId 动作用户 ID
-     * @param commandId 命令 ID
+     * @param commandId 指令编号（0：激活标签并增加物品 1：增加物品 2：修改物品名称 3：删除标签并移除物品 4：移除物品 5：删除标签）
      * @param itemOldName 物品旧名称
      * @param itemNewName 物品新名称
      * @param action 动作描述
@@ -76,7 +79,7 @@ public class RfidTagActionImpl implements RfidTagActionService {
         sessionUtils.refreshData(null);
 
         QueryWrapper<RfidTagAction> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("rfid_tag_action_id", rfidTagActionId);
+        queryWrapper.eq("action_id", rfidTagActionId);
         RfidTagAction rfidTagAction = rfidTagActionMapper.selectOne(queryWrapper);
 
         if (rfidTagAction == null) {
@@ -105,7 +108,7 @@ public class RfidTagActionImpl implements RfidTagActionService {
         sessionUtils.refreshData(null);
 
         QueryWrapper<RfidTagAction> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("rfid_tag_action_id", rfidTagActionId);
+        queryWrapper.eq("action_id", rfidTagActionId);
         RfidTagAction rfidTagAction = rfidTagActionMapper.selectOne(queryWrapper);
 
         if (rfidTagAction == null) {
@@ -120,11 +123,23 @@ public class RfidTagActionImpl implements RfidTagActionService {
     /**
      * 根据 RFID 标签 ID 查找 RFID 标签动作
      * @param rfidTagId RFID 标签 ID
+     * @param orderByCreateTimeDesc 是否按照创建时间倒叙排序 true 表示按照创建时间倒叙排序，false 表示按照创建时间正序排序 默认为 false
+     * @param page 页码
+     * @param pageSize 每页数量
      * @return List<RfidTagAction> 标签动作列表
      * @throws MyException
      */
     @Override
-    public List<RfidTagAction> findRfidTagActionByRfidTagId(String rfidTagId) throws MyException {
+    public Page<RfidTagAction> findRfidTagActionByRfidTagId(String rfidTagId, Boolean orderByCreateTimeDesc, Integer page, Integer pageSize) throws MyException {
+        if (page == null || page < 1) {
+            page = 1;
+        }
+        if (pageSize == null || pageSize < 1) {
+            pageSize = 5;
+        }
+        if (orderByCreateTimeDesc == null) {
+            orderByCreateTimeDesc = false;
+        }
 
         sessionUtils.refreshData(null);
 
@@ -142,8 +157,11 @@ public class RfidTagActionImpl implements RfidTagActionService {
         QueryWrapper<RfidTagAction> queryWrapper1 = new QueryWrapper<>();
         queryWrapper1.eq("rfid_tag_id", rfidTagId);
         queryWrapper1.isNull("delete_time");
+        queryWrapper1.ge("action_time", rfidTag.getActivationTime());
+        queryWrapper1.orderByDesc(orderByCreateTimeDesc, "action_time");
+        PageHelper.startPage(page, pageSize);
 
-        return rfidTagActionMapper.selectList(queryWrapper1);
+        return new Page<>(new PageInfo<>(rfidTagActionMapper.selectList(queryWrapper1)));
     }
 
 }

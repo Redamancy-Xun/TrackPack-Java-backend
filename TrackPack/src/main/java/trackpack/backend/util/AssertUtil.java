@@ -1,7 +1,7 @@
-package fun.redamancyxun.eqmaster.backend.util;
+package trackpack.backend.util;
 
-import fun.redamancyxun.eqmaster.backend.exception.EnumExceptionType;
-import fun.redamancyxun.eqmaster.backend.exception.MyException;
+import trackpack.backend.exception.EnumExceptionType;
+import trackpack.backend.exception.MyException;
 import org.springframework.util.CollectionUtils;
 
 import java.util.Collection;

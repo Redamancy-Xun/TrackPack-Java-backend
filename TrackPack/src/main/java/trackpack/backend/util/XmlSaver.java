@@ -1,4 +1,4 @@
-package fun.redamancyxun.eqmaster.backend.util;//package fun.redamancyxun.chinese.backend.util;
+package trackpack.backend.util;//package fun.redamancyxun.chinese.backend.util;
 //
 //import fun.redamancyxun.chinese.backend.score.IseDemo;
 //import org.w3c.dom.Document;

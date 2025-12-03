@@ -1,4 +1,4 @@
-package fun.redamancyxun.eqmaster.backend.util;
+package trackpack.backend.util;
 
 import com.aliyuncs.utils.StringUtils;
 import com.fasterxml.jackson.annotation.JsonInclude;

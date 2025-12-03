@@ -1,4 +1,4 @@
-package fun.redamancyxun.eqmaster.backend.util;
+package trackpack.backend.util;
 
 
 public class DisTranUtil {

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package trackpack.backend.demos.web;
+package trackpack.backend.web;
 
 /**
  * @author <a href="mailto:chenxilzx1@gmail.com">theonefx</a>

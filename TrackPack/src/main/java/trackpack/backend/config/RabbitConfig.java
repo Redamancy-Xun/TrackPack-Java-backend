@@ -1,4 +1,4 @@
-package fun.redamancyxun.eqmaster.backend.config;
+package trackpack.backend.config;
 
 import org.springframework.amqp.core.Queue;
 import org.springframework.context.annotation.Bean;
